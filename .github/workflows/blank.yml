@@ -25,6 +25,8 @@ jobs:
   slack:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Pull Request Title
+        run: echo ${{ github.event.pull_request.title }}
       - name: Slack - code review
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
