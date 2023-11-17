@@ -16,6 +16,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
+        description: This action will send PR to slack
         type: boolean
         default: false
 
@@ -27,5 +28,12 @@ jobs:
       - name: Slack - code review
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "Codeowners": "U123456789",
+              "Summary": "Example text",
+              "URL": "Example text"
+            }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: https://hooks.slack.com/triggers/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
