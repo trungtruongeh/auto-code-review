@@ -36,4 +36,4 @@ jobs:
               "URL": "${{ github.event.pull_request._links.html.href }}"
             }
         env:
-          SLACK_WEBHOOK_URL: https://hooks.slack.com/triggers/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
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
