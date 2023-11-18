@@ -14,10 +14,10 @@ on:
       - synchronize
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_run:
-    workflows: ["Slack - Request Code Review"]
-    types:
-      - manual
+  #workflow_run:
+  #  workflows: ["Slack - Request Code Review"]
+  #  types:
+  #    - manual
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
