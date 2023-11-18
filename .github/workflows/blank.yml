@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Slack - Request Code Review
 
 # Controls when the workflow will run
 on:
@@ -14,9 +14,10 @@ on:
       - synchronize
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_run:
-    types:
-      - manual
+  #workflow_run:
+  #  workflows: ["Slack - Request Code Review"]
+  #  types:
+  #    - manual
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,9 +32,9 @@ jobs:
         with:
           payload: |
             {
-              "Codeowners": "trung.truong@employmenthero.com",
+              "Codeowners": "trungtruongeh",
               "Summary": "${{ github.event.pull_request.title }}",
               "URL": "${{ github.event.pull_request._links.html.href }}"
             }
         env:
-          SLACK_WEBHOOK_URL: https://hooks.slack.com/triggers/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
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
