@@ -32,7 +32,7 @@ jobs:
         with:
           payload: |
             {
-              "Codeowners": "trung.truong@employmenthero.com",
+              "Codeowners": "trungtruongeh",
               "Summary": "${{ github.event.pull_request.title }}",
               "URL": "${{ github.event.pull_request._links.html.href }}"
             }
